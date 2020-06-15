@@ -1,0 +1,34 @@
+<form class="pb-3 pt-5 container-lg  " [formGroup]="registerForm" (ngSubmit)='getFormData(registerForm)'>
+    <div class="p-5 border rounded-lg border-success">
+      <h3 class="text-white text-center m-auto font-weight-bolder py-2">Register</h3>
+  <div class="form-group py-1">
+        <label class="text-white font-weight-bolder">First Name</label>
+        <input type="text" class="form-control font-weight-bolder" id='fname' placeholder="Enter First Name" formControlName="first_name">
+        <small  class="form-text text-danger font-weight-bolder" *ngIf='registerForm.get("first_name").invalid==true && registerForm.get("first_name").touched==true'> * Your First Name is not Valid</small>
+      </div>
+      <div class="form-group py-1">
+        <label class="text-white font-weight-bolder">Last Name</label>
+        <input type="text" class="form-control font-weight-bolder"  placeholder="Enter Last Name" formControlName="last_name">
+        <small  class="form-text text-danger font-weight-bolder" *ngIf='registerForm.get("last_name").invalid==true && registerForm.get("last_name").touched==true'> * Your Last Name is not Valid</small>
+      </div>
+      <div class="form-group py-1">
+        <label class="text-white font-weight-bolder">Age</label>
+        <input type="number" class="form-control font-weight-bolder"  placeholder="Enter Age" formControlName="age">
+        <small  class="form-text text-danger font-weight-bolder"*ngIf='registerForm.get("age").invalid==true && registerForm.get("age").touched==true'> * Your Age is not Valid</small>
+      </div>
+      <div class="form-group py-1">
+        <label class="text-white font-weight-bolder">E-mail</label>
+        <input type="email" class="form-control font-weight-bolder"  placeholder="Enter Your Mail" formControlName="email">
+        <small  class="form-text text-danger font-weight-bolder" *ngIf='registerForm.get("email").invalid==true && registerForm.get("email").touched==true'> * Your Email is not Valid</small>
+      </div>
+      <div class="form-group py-1">
+        <label class="text-white font-weight-bolder">Password</label>
+        <input type="password" class="form-control font-weight-bolder"  placeholder="Enter Your Password" formControlName="password">
+        <small  class="form-text text-danger font-weight-bolder" *ngIf='registerForm.get("password").invalid==true && registerForm.get("password").touched==true'> * Your Password is not Valid</small>
+      </div>
+      <div *ngIf='err' class="alert alert-danger" role="alert">
+        {{err}}
+      </div>
+      <button type="submit" class="btn btn-info" [disabled]='registerForm.invalid==true'>Submit</button>
+    </div>
+</form>

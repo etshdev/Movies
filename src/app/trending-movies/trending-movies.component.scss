@@ -1,0 +1,39 @@
+.TrendingMovies
+{
+background-color: #291d41;
+}
+
+h1,h2,h3,h4,h5,h6,p
+{
+    font-family: 'Segoe ui light';
+    
+}
+
+.title-trending
+{
+    font-size: 40px;
+}
+
+.cardMovies
+{
+background-color: gold;
+color: black !important ;
+top: 0%;
+right: 10%;
+
+}
+@media (max-width: 768px)
+{  
+    .title-trending
+    {
+        font-size: 27px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        margin: auto;
+        text-align: center;
+    }
+  
+    
+   
+}
+

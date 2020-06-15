@@ -1,0 +1,40 @@
+<section *ngIf='isLoading==true' class="py-5">
+    <div class="container ">
+        <h2 class="text-center text-primary font-weight-bolder py-4"> Movies Details</h2>
+        <div class="row">
+            <div class="col-md-12 border border-warning rounded py-2">
+                <div class="row">
+                <div class="col-md-6 py-2">
+                    <h3 class="text-white py-2"> <span class="font-weight-normal text-success">Title :</span> {{MovieDetails.title}}</h3>
+                    <h4 class="text-success  py-1"> Category : <span class="text-white " *ngFor="let generl of MovieDetails.genres">{{generl.name}}  ,</span> </h4>
+                    <h4 class="text-white py-2"> <span class="font-weight-normal text-success">Release Date :</span> {{MovieDetails.release_date}}</h4>
+                </div>
+                <div class="col-md-6 py-2">
+                    <h3 class="text-white py-2"> <span class="font-weight-normal text-success">revenue :</span> {{MovieDetails.revenue}} $</h3>
+                    <h4 class="text-white py-2"> <span class="font-weight-normal text-success"> Vote:</span> <i class="fas fa-star px-2 "></i>{{MovieDetails.vote_average}}</h4>
+                    <h4 class="text-white py-2"> <span class="font-weight-normal text-success">Vote Count :</span> {{MovieDetails.vote_count}}</h4>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+        <div class="row  py-5 align-items-center">
+          
+            <div class="col-md-7 ">
+                <img [src]=prefiximg+MovieDetails.backdrop_path class="w-100 rounded-lg">
+            </div>
+            <div class="col-md-5   px-4 ">
+               <h5 class="font-weight-bolder text-success py-3"> URL : <a [href]=MovieDetails.homepage>{{MovieDetails.homepage}}</a></h5>
+               <h3 class="text-white py-2"> <span class="font-weight-normal text-success">Budget :</span> {{MovieDetails.budget}} $</h3>
+               <h4 class="text-white py-2"> <span class="font-weight-normal text-success">Original Language :</span> {{MovieDetails.original_language}}</h4>
+
+            </div>
+         
+        </div>
+        <p class="text-success  font-weight-bold"> <span class="text-white"> overview:</span> <br> <br>{{MovieDetails.overview}}</p>
+
+      
+    </div>
+
+</section>

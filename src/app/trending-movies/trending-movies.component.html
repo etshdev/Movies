@@ -1,0 +1,21 @@
+<div class="container-fluid TrendingMovies py-5" >
+    <div class="row justify-content-center p-4">
+        <div class=" col-md-6 text-white d-flex align-items-center justify-content-center font-weight-bolder title-all" >
+            <h4 class="text-center font-weight-bolder title-trending">
+                The Trending Movies 
+                <br>                
+                ON This Day 
+            </h4>
+        </div>
+        
+        <div class="col-md-3 col-sm-4   position-relative Moviee " *ngFor='let Movie of TrendingMovies'>
+            <a [routerLink]="['/MovieDetails',Movie.id]"   class="text-decoration-none">
+            <img [src]="prefiximg+Movie.poster_path" class="w-100 rounded border">
+            <h5 class="text-center pt-1 pb-2 text-success font-weight-bold">{{Movie.title}}</h5>
+            <h6 class="text-center  font-weight-bolder d-inline px-2 py-3 cardMovies position-absolute rounded-bottom">{{Movie.vote_average}}</h6>
+            </a>
+        </div>
+
+
+    </div>
+</div>

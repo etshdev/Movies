@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center py-5">
+<form class=" pt-5 container-lg w-50  " [formGroup]="loginform" (ngSubmit)='getFormData(loginform)'>
+ <div class="form-group py-1 ">
+    <label class="text-white font-weight-bolder ">E-mail</label>
+    <input type="email" class="form-control font-weight-bolder  "  placeholder="Enter Your Mail" formControlName="email">
+    <small  class="form-text text-danger font-weight-bolder" *ngIf='loginform.get("email").invalid==true && loginform.get("email").touched==true'> * Your Email is not Valid</small>
+  </div>
+  <div class="form-group py-1">
+    <label class="text-white font-weight-bolder">Password</label>
+    <input type="password" class="form-control font-weight-bolder "  placeholder="Enter Your Password" formControlName="password">
+    <small  class="form-text text-danger font-weight-bolder" *ngIf='loginform.get("password").invalid==true && loginform.get("password").touched==true'> * Your Password is not Valid</small>
+  </div>
+  <div class="pb-2">
+    <small  class="form-text text-danger font-weight-bolder" *ngIf='err'> {{err}}</small>
+  </div>
+  <button type="submit" class="btn btn-danger" [disabled]='loginform.invalid==true'> <span *ngIf='islogin==false'>logIn</span> <span *ngIf='islogin==true'>Waiting...</span></button>
+  <span><a class="px-3 text-white font-weight-bolder" [routerLink]="['/register']">Register</a></span>
+</form>
+</div>
